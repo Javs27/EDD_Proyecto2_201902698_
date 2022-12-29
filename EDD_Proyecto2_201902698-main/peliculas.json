@@ -1,0 +1,155 @@
+[
+	{
+		"id_pelicula": 49268,
+		"nombre_pelicula": "Wang",
+		"descripcion": "Mauris magna. Duis dignissim tempor arcu. Vestibulum ut eros non enim commodo hendrerit. Donec porttitor",
+		"puntuacion_star": 3,
+		"precion_Q": 160,
+		"paginas": 124,
+		"categoria": "Accion"
+	},
+	{
+		"id_pelicula": 14415,
+		"nombre_pelicula": "Maggy",
+		"descripcion": "felis ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam lorem, auctor quis, tristique ac, eleifend",
+		"puntuacion_star": 4,
+		"precion_Q": 70,
+		"paginas": 162,
+		"categoria": "Accion"
+	},
+	{
+		"id_pelicula": 38880,
+		"nombre_pelicula": "Darryl",
+		"descripcion": "posuere cubilia Curae Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque",
+		"puntuacion_star": 2,
+		"precion_Q": 190,
+		"paginas": 187,
+		"categoria": "Comedia"
+	},
+	{
+		"id_pelicula": 77228,
+		"nombre_pelicula": "Kyle",
+		"descripcion": "posuere cubilia Curae Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque",
+		"puntuacion_star": 1,
+		"precion_Q": 57,
+		"paginas": 104,
+		"categoria": "Comedia"
+	},
+	{
+		"id_pelicula": 5632,
+		"nombre_pelicula": "Otto",
+		"descripcion": "porttitor interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan convallis, ante lectus",
+		"puntuacion_star": 2,
+		"precion_Q": 143,
+		"paginas": 107,
+		"categoria": "Romance"
+	},
+	{
+		"id_pelicula": 24873,
+		"nombre_pelicula": "Patrick",
+		"descripcion": "luctus, ipsum leo elementum sem, vitae aliquam eros turpis non enim. Mauris quis turpis vitae",
+		"puntuacion_star": 2,
+		"precion_Q": 64,
+		"paginas": 123,
+		"categoria": "Romance"
+	},
+	{
+		"id_pelicula": 14354,
+		"nombre_pelicula": "Mark",
+		"descripcion": "eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor. Donec",
+		"puntuacion_star": 3,
+		"precion_Q": 147,
+		"paginas": 138,
+		"categoria": "Accion"
+	},
+	{
+		"id_pelicula": 49827,
+		"nombre_pelicula": "Scarlet",
+		"descripcion": "Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim.",
+		"puntuacion_star": 4,
+		"precion_Q": 82,
+		"paginas": 180,
+		"categoria": "Comedia"
+	},
+	{
+		"id_pelicula": 29537,
+		"nombre_pelicula": "Kylynn",
+		"descripcion": "dolor vitae dolor. Donec fringilla. Donec feugiat metus sit amet ante. Vivamus non lorem vitae",
+		"puntuacion_star": 5,
+		"precion_Q": 155,
+		"paginas": 113,
+		"categoria": "Romance"
+	},
+	{
+		"id_pelicula": 14087,
+		"nombre_pelicula": "Kirsten",
+		"descripcion": "diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit.",
+		"puntuacion_star": 4,
+		"precion_Q": 155,
+		"paginas": 114,
+		"categoria": "Romance"
+	},
+	{
+		"id_pelicula": 50404,
+		"nombre_pelicula": "Marshall",
+		"descripcion": "lacus. Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a",
+		"puntuacion_star": 2,
+		"precion_Q": 96,
+		"paginas": 198,
+		"categoria": "Accion"
+	},
+	{
+		"id_pelicula": 84540,
+		"nombre_pelicula": "Pandora",
+		"descripcion": "cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada vel, convallis",
+		"puntuacion_star": 3,
+		"precion_Q": 86,
+		"paginas": 138,
+		"categoria": "Comedia"
+	},
+	{
+		"id_pelicula": 44886,
+		"nombre_pelicula": "Wyatt",
+		"descripcion": "dis parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor velit.",
+		"puntuacion_star": 5,
+		"precion_Q": 76,
+		"paginas": 203,
+		"categoria": "Comedia"
+	},
+	{
+		"id_pelicula": 13871,
+		"nombre_pelicula": "Adrian",
+		"descripcion": "morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a",
+		"puntuacion_star": 2,
+		"precion_Q": 50,
+		"paginas": 168,
+		"categoria": "Romance"
+	},
+	{
+		"id_pelicula": 31982,
+		"nombre_pelicula": "Danielle",
+		"descripcion": "sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere",
+		"puntuacion_star": 1,
+		"precion_Q": 66,
+		"paginas": 166,
+		"categoria": "Romance"
+	},
+	{
+		"id_pelicula": 27639,
+		"nombre_pelicula": "Lani",
+		"descripcion": "sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse",
+		"puntuacion_star": 3,
+		"precion_Q": 63,
+		"paginas": 154,
+		"categoria": "Accion"
+	},
+	{
+		"id_pelicula": 45872,
+		"nombre_pelicula": "Rebecca",
+		"descripcion": "dolor, tempus non, lacinia at, iaculis quis, pede. Praesent eu dui. Cum sociis natoque penatibus",
+		"puntuacion_star": 3,
+		"precion_Q": 72,
+		"paginas": 106,
+		"categoria": "Accion"
+	}
+]

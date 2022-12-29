@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDD Proyecto 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body background="Fondo.jpg">
+    <!-- Inicio Login -->
+    <div id="divLogin" style="display:flex; justify-content: center; align-items: center; margin-top: 10%;">
+        <form>
+            <h1>Login</h1>
+            <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="User Name">
+            </div>
+            <div class="form-group">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Administrador</label>
+            </div>
+            <button type = "button" class="btn btn-primary" onclick = "login()">Login</button>
+        </form>
+    </div>
+
+    <!-- Inicio Admin -->
+    <div id="divAdmin" style="display: none; justify-content: center; align-items: center; margin-top: 3%;">
+        <button type="button" class="btn btn-danger ml-auto" onclick = "cerrarSesion()">Cerrar sesion</button>
+        <h1>Administrador</h1>
+        <h4>Carga películas</h4>
+        <input class="my-2" type="file" id="file-pelis" accept=".json" onchange='openFileAVL(event)'>
+        <h4>Carga clientes</h4>
+        <input class="my-2" type="file" id="file-clientes" accept=".json" onchange='openFileSimple(event)'>
+        <h4>Carga actores</h4>
+        <input class="my-2" type="file" id="file-actores" accept=".json" onchange='openFileABB(event)'>
+        <h4>Carga categorías</h4>
+        <input class="my-2" type="file" id="file-categorias" accept=".json" onchange='openFileHash(event)'>
+
+        <h2>Estructuras</h2>
+            <div>
+                <button type="button" class="btn btn-info" onclick = "renderAVL()">Grafo películas</button>
+                <button type="button" class="btn btn-info" onclick = "renderSimple()">Grafo clientes</button>
+                <button type="button" class="btn btn-info" onclick = "renderABB()">Grafo actores</button>
+                <button type="button" class="btn btn-info" onclick = "renderHash()">Grafo categorías</button>
+                <button type="button" class="btn btn-warning" onclick = "downloadimage()">Descargar grafo</button>
+            </div>
+        <div id="lienzo" class="overflow-auto my-3" style="border-style: solid;"></div>
+    </div>
+
+    <!-- Inicio Cliente -->
+    <div id="divCliente" style="display: none; justify-content: center; align-items: center; margin-top: 3%;">
+        <button type="button" class="btn btn-danger ml-auto" onclick = "cerrarSesion()">Cerrar sesion</button>
+        <h1>Moviecats</h1>
+        <div class="my-2" style="margin-left: auto;">
+            <button type="button" class="btn btn-primary" onclick = "vistaUsuario('peliculas')">Ver peliculas</button>
+            <button type="button" class="btn btn-primary" onclick = "vistaUsuario('actores')">Ver actores</button>
+            <button type="button" class="btn btn-primary" onclick = "vistaUsuario('categorias')">Ver categorias</button>
+        </div>
+        <div id="divPelis">
+            <h4>Peliculas</h4>
+            <select class="form-select" aria-label="Default select example" id="selectPelis" onchange="ordenPelis()">
+                <option value="Ascendente">Ascendente</option>
+                <option value="Descendente">Descendente</option>
+              </select>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Informacion</th>
+                    <th scope="col">Alquilar</th>
+                    <th scope="col">Precio</th>
+                  </tr>
+                </thead>
+                <tbody id="containerPelis">
+                </tbody>
+              </table>
+        </div>
+        <div id="divActores" style="display: none;">
+            <h4>Actores</h4>
+            <select class="form-select" aria-label="Default select example" id="selectActores" onchange="ordenActores()">
+                <option value="inorden">inorden</option>
+                <option value="preorden">preorden</option>
+                <option value="posorden">posorden</option>
+            </select>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripcion</th>
+                  </tr>
+                </thead>
+                <tbody id="containerActores">
+                </tbody>
+              </table>
+        </div>
+        <div id="divCategorias" style="display: none;">
+            <h4>Categorias</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id Categoria</th>
+                  <th scope="col">Nombre</th>
+                </tr>
+              </thead>
+              <tbody id="containerCategoria">
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Peliculas -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="display: grid;">
+              <span id="exampleModalLabelID"></span>
+              <span id="exampleModalLabelDes" class="mt-3"></span>
+              <span id="exampleModalLabelPunt" class="mt-3"></span>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button" onclick="cambiarPuntuacionPeli()">Cambiar puntuacion</button>
+                </div>
+                <input type="text" class="form-control" placeholder="" aria-label="" id="valueLabelPunt" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-info" onclick="Alquilar()">Alquilar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <!-- Fin Body -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+    <!-- Si utilizamos componentes de Bootstrap que requieran Javascript agregar estos tres archivos -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./Index.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script type="text/javascript">
+
+        function downloadimage() {
+            var container = document.getElementById("lienzo");
+            html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+                var link = document.createElement("a");
+                document.body.appendChild(link);
+                link.download = "grafo.png";
+                link.href = canvas.toDataURL();
+                link.target = '_blank';
+                link.click();
+            });
+        }
+
+    </script>
+</body>
+</html>
