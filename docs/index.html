@@ -7,9 +7,9 @@
     <title>EDD Proyecto 2</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body background="Fondo.jpg">
+<body  background="Fondo.jpg">
     <!-- Inicio Login -->
-    <div id="divLogin" style="display:flex; justify-content: center; align-items: center; margin-top: 10%;">
+    <div id="divLogin" style="display: flex; justify-content: center; align-items: center; margin-top: 10%;">
         <form>
             <h1>Login</h1>
             <div class="form-group">
@@ -45,9 +45,16 @@
                 <button type="button" class="btn btn-info" onclick = "renderSimple()">Grafo clientes</button>
                 <button type="button" class="btn btn-info" onclick = "renderABB()">Grafo actores</button>
                 <button type="button" class="btn btn-info" onclick = "renderHash()">Grafo categorías</button>
+                <button type="button" class="btn btn-info" onclick = "renderMerkel()">Ver Blockchain</button>
                 <button type="button" class="btn btn-warning" onclick = "downloadimage()">Descargar grafo</button>
             </div>
         <div id="lienzo" class="overflow-auto my-3" style="border-style: solid;"></div>
+            <div>
+                <input type="number" id ="segundos_blockchain"></input>
+                <button type="button" class="btn btn-info" onclick = "cambiar_periodo()">Cambiar tiempo de generacion</button>
+                <button type="button" class="btn btn-danger" onclick = "generate_block()">Crear bloque ahora</button>
+            </div>
+        <div id="divBlockchain" class="d-flex flex-column" style="justify-content: center; align-items: center; margin-top: 3%;"></div>
     </div>
 
     <!-- Inicio Cliente -->
@@ -133,7 +140,13 @@
                 </div>
                 <input type="text" class="form-control" placeholder="" aria-label="" id="valueLabelPunt" aria-describedby="basic-addon1">
               </div>
+              <div id ="container_comentarios">
+                </div>
+               <div class="input-group mb-3">
+                <div class="input-group-prepend" id="form_hacer_comentario">
+                  
             </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               <button type="button" class="btn btn-info" onclick="Alquilar()">Alquilar</button>
